@@ -1,1 +1,1 @@
-# cpp-private
+# Nastavení vývojového prostředí s testy
