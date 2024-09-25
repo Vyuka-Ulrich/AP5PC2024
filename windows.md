@@ -22,7 +22,7 @@ https://winlibs.com/#download-release
 - vložit cestu do složky bin nově extrahovaného mingw
 ![image](https://github.com/user-attachments/assets/65219482-9bc8-4883-abbe-15c8772a3c72)
 
-### otestovat
+### 4. otestovat
 - otevřít nový terminál
 - validní výstup:
 
