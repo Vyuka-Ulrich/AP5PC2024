@@ -3,7 +3,7 @@
 $ mkdir build
 $ cd build
 $ cmake -G "MinGW Makefiles" ..
-$ cmake --build ..
+$ cmake --build .
 ```
 
 ### How to run on unix:
