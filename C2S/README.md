@@ -7,7 +7,8 @@
 - dělení (zkus vymyslet něco pro dělení nulou - budeme se učit)
 - výpočet délky strany c pravoúhlého trojúhelníku
 - ntého prvku fibinacciho posloupnosti
-- faktoriálu
+- faktoriál n
+
 BONUS:
 - nastuduj jak funguje std::list
 - napiš funkci co přijme list a vrátí sumu prvků v listu
