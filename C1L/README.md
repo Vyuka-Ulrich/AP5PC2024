@@ -14,6 +14,29 @@ $ cmake -G "Unix Makefiles" ..
 $ cmake --build .
 ```
 
+###  how to run tests:
+CMakeLists.txt
+```
+...
+add_subdirectory(test)
+...
+```
+
+test/CMakeLists.txt
+```
+...
+add_executable(
+  add_test <--- nazev executable
+  adder_test.cpp
+)
+...
+```
+
+```bash
+$ cd build
+$ ./test/add_test(.exe)
+```
+
 
 ### Libray:
 
