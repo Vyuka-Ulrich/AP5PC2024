@@ -16,5 +16,5 @@ Point add(Point p, float num);
 /**
 * Vrátí nový bod posunutý o Vektor
 */
-Point add(Vector v);
+Point add(Point p, Vector v);
 ```
