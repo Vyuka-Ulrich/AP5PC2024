@@ -1,0 +1,1 @@
+// point nema zadnou netemplated metodu, az nejakou bude mit, prijde sem
