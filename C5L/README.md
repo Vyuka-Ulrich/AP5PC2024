@@ -1,5 +1,6 @@
 # Cviko 5 - templates a přetěžování operátorů
 
+- const corectness k prostudování: [https://www.youtube.com/watch?v=4fJBrditnJU](youtube)
 
 při použití templates je nutné změnit strukturu tak, abychom mohli importovat definice templates do definice hlavičkových souborů (takto to c++ vyžaduje)
 ```
