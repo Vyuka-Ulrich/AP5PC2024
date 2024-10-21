@@ -8,8 +8,8 @@ namespace Math
     // template<typename T>
     // Point<T> operator+(const Point<T>& p, const Vector<T>& v);
 
-    template<typename T>
-    Point<T> posun(const Point<T>& p);
+    template <class T>
+    Point<T> posun(const Point<T> &p, T value);
 }
 
 #include "../template/math.tpp"
