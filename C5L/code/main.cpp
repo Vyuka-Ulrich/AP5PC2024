@@ -9,53 +9,59 @@ private:
 public:
     TwoD(float x, float y) : _x(x), _y(y) {}
 
-    friend std::ostream &operator<<(std::ostream &os, const TwoD &dt);
-
-    TwoD operator+(TwoD const &obj)
+    TwoD operator+(const TwoD &other) const
     {
-
-        return TwoD(_x + obj._x, _y + obj._y);
+        return TwoD(_x + other._x, _y + other._y);
     }
+
+    friend std::ostream &operator<<(std::ostream &os, const TwoD &bod);
 };
 
-std::ostream &operator<<(std::ostream &os, const TwoD &dt)
+std::ostream &operator<<(std::ostream &os, const TwoD &bod)
 {
-    os << "{" << dt._x << ',' << dt._y << '}';
+    os << "{" << bod._x << "," << bod._y << "}";
     return os;
 }
 
+class ThreeD
+{
+private:
+    float _x, _y, _z;
+
+public:
+    ThreeD(float x, float y, float z) : _x(x), _y(y), _z(z) {}
+
+    ThreeD operator+(const ThreeD &other) const
+    {
+        return ThreeD(_x + other._x, _y + other._y, _z * other._z);
+    }
+
+    friend std::ostream &operator<<(std::ostream &os, const ThreeD &bod);
+};
+
+std::ostream &operator<<(std::ostream &os, const ThreeD &bod)
+{
+    os << "{" << bod._x << "," << bod._y << "," << bod._z << "}";
+    return os;
+}
 
 int main()
 {
+    const Grupoid<float> g(5.6f);
+    const Grupoid<float> n = math::move(g, 1.1f);
+    n.print();
 
-    const TwoD td(5.3f, 2.1f);
-    std::cout << td << std::endl;
+    const Grupoid<std::string> s("ahoj");
+    const Grupoid<std::string> ns = math::move(s, std::string("svete"));
+    ns.print();
 
-    const Point<float> p(5.1f);
-    p.print();
+    const Grupoid<TwoD> td(TwoD(1.0f, 3.2f));
+    const Grupoid<TwoD> tds = math::move(td, TwoD(1.0f, 1.2f));
+    tds.print();
 
-    const Point<int> pint(5);
-    pint.print();
-
-    const Point<int> novy = Math::posun(pint, 3);
-
-    novy.print();
-
-    const Point<float> novyfloat = Math::posun(p, 3.2f);
-
-    novyfloat.print();
-
-    const Point<TwoD> ptd(TwoD(5.2f, 3.1f));
-
-    const Point<TwoD> novyptd = Math::posun(ptd, TwoD(1.0f, 5.2f));
-
-    ptd.print();
-    novyptd.print();
-
-    const Point<std::string> stary(std::string("Hello"));
-    const Point<std::string> novystring = Math::posun(stary, std::string("World"));
-
-    novystring.print();
+    const Grupoid<ThreeD> td3(ThreeD(1.0f, 3.2f, 1.2f));
+    const Grupoid<ThreeD> tds3 = math::move(td3, ThreeD(1.0f, 1.2f, 2.0f));
+    tds3.print();
 
     return 0;
 }

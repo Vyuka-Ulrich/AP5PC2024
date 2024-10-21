@@ -1,15 +1,11 @@
-#include <point.h>
+#include <grupoid.h>
 
-namespace Math
+namespace math
 {
     int add(int a, int b);
 
-    // TODO: AZ BUDE vector
-    // template<typename T>
-    // Point<T> operator+(const Point<T>& p, const Vector<T>& v);
-
     template <class T>
-    Point<T> posun(const Point<T> &p, T value);
+    Grupoid<T> move(const Grupoid<T> old, T value);
 }
 
 #include "../template/math.tpp"

@@ -1,5 +1,5 @@
 template <class T>
-Point<T> Math::posun(const Point<T> &p, T value)
+Grupoid<T> math::move(const Grupoid<T> old, T value)
 {
-    return Point<T>(p.getX() + value);
+    return Grupoid<T>(old.getX() + value);
 }
