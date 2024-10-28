@@ -26,7 +26,7 @@
    - Implementujte přetížení operátoru `<<` pro `Point` i `Vector`, aby bylo možné výstup formátovat přímo pomocí `std::cout`. Například pro `Point` by výstup mohl vypadat takto: `Point(5.5)`.
   
 5. **Knihovna mathlib**
-   - Třídu point importujte do knihovny naší knihovny matlib tak, aby uživatel mohl implementovat jen knihovnu matlib a fungoval mu `Point`.
+   - Třídu point importujte do naší knihovny matlib tak, aby uživatel mohl implementovat jen knihovnu matlib a fungoval mu `Point` (a tudíž i `Vector`).
 
 ---
 
