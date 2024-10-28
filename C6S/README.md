@@ -1,6 +1,7 @@
 ### Úkol: Implementace tříd `Point` a `Vector` s přetížením operátorů
 
 **Cíl**: V tomto úkolu vytvoříte třídy `Point` a `Vector`, které reprezentují body a vektory v jednorozměrném prostoru, a přidáte přetížené operátory tak, aby bylo možné provádět sčítání bodu s vektorem a odečítání dvou bodů.
+**Nezapomeň** na novou strukturu souborů s template files.
 
 ---
 
@@ -10,10 +11,12 @@
    - Třída bude šablonová (`template <class T>`) a bude mít jeden soukromý atribut `_x` typu `T`, který představuje souřadnici bodu.
    - Implementujte konstruktor, který inicializuje `_x` hodnotou předanou při vytvoření objektu.
    - Přidejte veřejnou metodu `getX()`, která vrátí hodnotu `_x`.
+   - třída `Point` bude závislá na třídě `Vector`
 
 2. **Vytvořte třídu `Vector`**:
    - Stejně jako třída `Point`, i `Vector` bude šablonová třída s jedním atributem `_x`, který představuje velikost vektoru.
    - Implementujte konstruktor, metodu `getX()` podobně jako v `Point`.
+   - třída `Vector` NEBUDE závislá na třídě `Point`
 
 3. **Přetížení operátorů**:
    - **Operátor `+` v `Point`**: Přetěžte operátor `+` tak, aby přijal `Vector` jako argument, přičetl souřadnici `_x` vektoru k `_x` bodu a vrátil nový `Point` s touto souřadnicí.
@@ -21,6 +24,9 @@
 
 4. **Přetížení operátoru `<<`**:
    - Implementujte přetížení operátoru `<<` pro `Point` i `Vector`, aby bylo možné výstup formátovat přímo pomocí `std::cout`. Například pro `Point` by výstup mohl vypadat takto: `Point(5.5)`.
+  
+5. **Knihovna mathlib**
+   - Třídu point importujte do knihovny naší knihovny matlib tak, aby uživatel mohl implementovat jen knihovnu matlib a fungoval mu `Point`.
 
 ---
 
