@@ -6,7 +6,7 @@ Dnes je vylepšíme o koncepty:
 - pak demonstruj koncepty tak, že se pokusíš sečíst Point<TřidaBez+> + Vektor<Trida> (tyto třídy stačí mít v main.cpp)
 - nakonec vytvoř dvě třídy (stačí v main.cpp, případně test.cpp)
 
-**Bonus:**
+**Bonus (viz C7L Readme: Pokročilé 2)**
 - třída Time, která bude reprezentovat bod (Rok, Měsíc, den, hodina, minuta)
 - třída Duration, která bude reprezentovat vektor (minuty)
 - V mainu demonstruj, jak vytvoříš bod, který obsahuje aktuální čas a přidej k němu různý počet minut
