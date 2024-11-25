@@ -258,3 +258,95 @@ int main() {
 
 ```
 
+## Pokročilé 2: Rozdílné T a S
+
+```c++
+#include <iostream>
+#include <concepts>
+#include <type_traits>
+
+template <class T, class S>
+concept Scalable = requires(T a, S b) {
+    { a *b } -> std::same_as<T>;
+};
+
+// template <class T, class S>
+// concept FloatingPofloat = std::is_arithmetic_v<S>;
+
+template <class T, class S>
+concept Affine = std::is_arithmetic_v<S> && Scalable<T, S>;
+
+template <class T, class S>
+    requires Affine<T, S>
+T scale(T a, S b)
+{
+    return a * b;
+}
+
+class Rectangle
+{
+    float _a, _b;
+
+public:
+    Rectangle(float a, float b) : _a(a), _b(b) {}
+
+    float getArea() const
+    {
+        return _a * _b;
+    }
+
+    Rectangle operator*(float scalar) const
+    {
+        return Rectangle(_a * scalar, _b * scalar);
+    }
+
+    friend std::ostream &operator<<(std::ostream &os, const Rectangle &rec)
+    {
+        os << "Rectangle(" << rec._a << "," << rec._b << ")";
+        return os;
+    }
+};
+
+class Square
+{
+    float _a;
+
+public:
+    Square(float a) : _a(a)
+    {
+    }
+
+    float getArea() const
+    {
+        return _a * _a;
+    }
+
+    Square operator*(float scalar) const
+    {
+        return Square(_a * scalar);
+    }
+
+    friend std::ostream &operator<<(std::ostream &os, const Square &rec)
+    {
+        os << "Square(" << rec._a << ")";
+        return os;
+    }
+};
+
+int main()
+{
+
+    std::cout << Rectangle(5, 6) << std::endl;
+    std::cout << Square(5) << std::endl;
+
+    std::cout << scale(Rectangle(2.1, 3.5), 2).getArea() << std::endl;
+
+    const auto ctverec = Square(1);
+    std::cout << scale(ctverec, 4) << std::endl;
+    std::cout << ctverec.getArea() << std::endl;
+    const auto bigger = scale(ctverec, 3);
+    std::cout << bigger.getArea() << std::endl;
+
+    return 0;
+}
+```
